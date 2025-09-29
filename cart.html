@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo"><h2>Abhika Libas</h2></div>
+      <ul class="nav-links">
+        <li><a href="index.html">
+          <i class="fa-regular fa-house"></i>Home</a></li>
+        <li><a href="about.html">
+          <i class="fa-solid fa-circle-info"></i>About</a></li>
+        <li><a href="products.html">
+          <i class="fa-solid fa-bag-shopping"></i>Products</a></li>
+        <li><a href="contact.html">
+          <i class="fa-solid fa-phone"></i>Contact</a></li>
+        <li><a href="cart.html">
+          <i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="cart">
+
+    </section>
+  </main>
+   <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Abhika Libas</h3>
+        <p>Trendy & comfortable kurtis for every occasion. Stay stylish with our latest collections!</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">
+            <i class="fa-regular fa-house"></i>Home</a></li>
+          <li><a href="about.html">
+            <i class="fa-solid fa-circle-info"></i>About</a></li>
+          <li><a href="products.html">
+            <i class="fa-solid fa-bag-shopping"></i>Products</a></li>
+          <li><a href="contact.html">
+            <i class="fa-solid fa-phone"></i>Contact</a></li>
+          <li><a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: info@fashionstore.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Follow us:</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a> |
+          <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a> |
+          <a href="#"><i class="fa-brands fa-twitter"></i>Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fashion Store. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+<script>
+  const cartSection = document.querySelector(".cart");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    cartSection.innerHTML = "<h2>Your Cart is Empty 🛒</h2>";
+  } else {
+    let total = 0;
+    let cartHTML = `<div class="cart-items"><h2>Your Cart</h2></div>`;
+
+    cart.forEach((item, index) => {
+      cartHTML += `
+        <div class="cart-item">
+          <img src="${item.image}" width="100">
+          <h3>${item.name}</h3>
+          <p>${item.price}</p>
+          <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+        </div>
+      `;
+      // Price se ₹ remove karke total calculate karo
+      total += parseFloat(item.price.replace("₹", ""));
+    });
+
+    cartHTML += `</div>
+      <h3>Total: ₹${total}</h3>
+      <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+      <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+    `;
+
+    cartSection.innerHTML = cartHTML;
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload();
+  }
+
+  function clearCart() {
+    localStorage.removeItem("cart");
+    location.reload();
+  }
+
+  function buyNow() {
+    if(cart.length === 0){
+      alert("Your cart is empty!");
+    } else {
+      alert("Thank you for your purchase! 🛒");
+      clearCart();
+    }
+  }
+</script>
+
+</body>
+</html>
