@@ -2,18 +2,18 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8d9d9;
+  background-color: #fbeaea;
 }
 
 /* Navbar */
 nav {
-  background: #220000;
+  background: #1f012a;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  min-height: 70px;
+  max-height: 70px;
 }
 nav ul {
   list-style: none;
@@ -35,20 +35,21 @@ nav a:hover {
 .logo {
   display: flex;
   align-items: center;  /* vertical center */
-  gap: 10px; /* image aur text ke beech spacing */
+  gap: 5px; /* image aur text ke beech spacing */
   color: whitesmoke;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
 }
-.logo::before {
-  content: "";
-  background-image: url("assets/image.png");
-  background-size: cover;
+.logo img {
   height: 50px;
   width: 50px;
-  display: inline-block;
+  border-radius: 50%;
+  object-fit: cover;  /* ensures full cover */
 }
+
+
 .logo:hover{
   text-shadow: 1px 1px 3px orange;
 }
@@ -56,14 +57,14 @@ nav a:hover {
 .hero {
   background: url('assets/hero\ banner.jpg') center/cover no-repeat;
   height: 300px;
-  color: rgb(49, 0, 0);
+  color: rgb(8, 8, 8);
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   padding: 5rem 2rem;
 }
 .hero .btn {
-  background: #ffad29;
+  background: #80009a;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -72,7 +73,7 @@ nav a:hover {
   font-weight: normal;
 }
 .hero .btn:hover{
-    background: #da8a0a;
+    background: #90009a;
 }
 /* Featured & New Arrivals Products */
 .featured-products, .new-arrivals {
@@ -118,7 +119,7 @@ nav a:hover {
   background-color: white;
   border-radius: 5px;
   text-align: center;
-  padding: 1rem;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -155,8 +156,7 @@ nav a:hover {
   background: #80009a;
   font-size: 1.2rem;
   border: none;
-  color: white;
-  padding: 10px;
+  color: white;padding: 10px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -205,6 +205,7 @@ nav a:hover {
   padding: 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+  max-width: 400px;
 }
 .testimonial-card:hover {
     transform: translateY(-5px);
@@ -302,8 +303,8 @@ nav a:hover {
 
 /* Footer */
 footer {
-  background: #220000;
-  color: #fff;
+  background: #1f012a;
+  color: #ffffff;
   padding: 2rem 1rem;
   margin-top: 2rem;
 }
@@ -331,7 +332,7 @@ footer {
 }
 
 .footer-links a, .social-links a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -346,4 +347,3 @@ footer {
   border-top: 1px solid #444;
   padding-top: 1rem;
 }
-
