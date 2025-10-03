@@ -6,30 +6,61 @@ body {
 }
 
 /* Navbar */
+/* Navigation Bar */
 nav {
   background: #1f012a;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  max-height: 70px;
+  padding: 0 2rem;        /* top/bottom padding remove, sirf left-right */
+  position: sticky;
+  top: 0;
+  height: 80px;           /* fixed nav height */
+  z-index: 1000;
 }
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  height: 50px;           /* fixed logo size */
+  width: auto;
+  object-fit: contain;
+}
+.logo h2 {
+  font-size: 1.5rem;
+  margin: 0;              /* default margin remove */
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* Navigation Links */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin: 0;              /* ul ka default margin remove */
+  padding: 0;             /* ul ka default padding remove */
 }
 nav a {
   color: whitesmoke;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
-i {
-  margin-right: 5px;
+nav a i {
+  margin-right: 6px;
 }
 nav a:hover {
   color: #f39c12;
+  transform: scale(1.05); /* halka hover effect */
+  transition: color 0.3s, transform 0.3s;
 }
 
 .logo {
@@ -37,7 +68,7 @@ nav a:hover {
   align-items: center;  /* vertical center */
   gap: 5px; /* image aur text ke beech spacing */
   color: whitesmoke;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
@@ -49,10 +80,6 @@ nav a:hover {
   object-fit: cover;  /* ensures full cover */
 }
 
-
-.logo:hover{
-  text-shadow: 1px 1px 3px orange;
-}
 /* Hero Section */
 .hero {
   background: url('assets/hero\ banner.jpg') center/cover no-repeat;
@@ -210,27 +237,157 @@ nav a:hover {
 .testimonial-card:hover {
     transform: translateY(-5px);
 }
-/* About */
-.about{
-  padding: 2rem 1rem;
+/* ---------- About Section ---------- */
+.about {
+  padding: 3rem 2rem;
   text-align: center;
-  height: 90vh;
+  background: #f8d9d9;
+  border-radius: 12px;
+  margin-bottom: 2rem;
 }
 .about h2 {
-    text-shadow: 1px 2px 2px rgb(163, 156, 156);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  text-shadow: 1px 2px 2px rgb(163, 156, 156);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  color: #220000;
 }
 .about p {
-  font-size: large;
+  font-size: 1.1rem;
   letter-spacing: 1px;
   color: rgb(65, 8, 8);
+  line-height: 1.6;
 }
-.about-vid {
+
+/* ---------- Founder Section ---------- */
+/* Founder Section */
+.founder {
+  background: #fff4f4;
+  border-left: 5px solid #220000;
+  border-radius: 8px;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.founder:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.founder h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #220000;
+}
+
+.founder-content {
   display: flex;
-  justify-content: center;
-  margin: 20px auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
 }
+
+.founder-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;   /* circular */
+  object-fit: cover;    /* image crop ho jaye neat */
+  border: 4px solid #220000;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.founder p {
+  font-size: 1.1rem;
+  color: rgb(65, 8, 8);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* ---------- Vision & Mission ---------- */
+.vision-mission {
+  background: #fdf2f2;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  transition: ease 0.3s;
+}
+.vision-mission:hover {
+  background-color: #ffe7e7;
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.vision-mission h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #220000;
+}
+.vision-mission p {
+  margin: 0.5rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgb(65, 8, 8);
+}
+
+/* ---------- Focus Section ---------- */
+.focus {
+  background: #fff8f8;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  text-align: center;
+  transition: ease 0.3s;
+}
+.focus h2 {
+  color: #220000;
+  margin-bottom: 1rem;
+}
+.focus:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.focus p {
+  font-size: 1.1rem;
+  color: rgb(65, 8, 8);
+  line-height: 1.6;
+}
+
+/* ---------- Testimonials Section ---------- */
+.testimonials {
+  background: #f8d9d9;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #220000;
+}
+.testimonial {
+  background: white;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 700px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  font-style: italic;
+  transition: ease 0.3s;
+}
+.testimonial strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: #220000;
+}
+
 /* Contact */
 .contact {
   padding: 2rem 1rem;
