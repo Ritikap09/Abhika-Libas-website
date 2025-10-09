@@ -9,25 +9,36 @@
 </head>
 <body>
   <!-- Navigation Bar -->
-  <header>
-    <nav>
-      <div class="logo">
-        <img src="assets/Media.jpeg" alt="Logo">
-        <h2>Abhika Libas</h2></div>
-      <ul class="nav-links">
-        <li><a href="index.html">
-          <i class="fa-regular fa-house"></i>Home</a></li>
-        <li><a href="about.html">
-          <i class="fa-solid fa-circle-info"></i>About</a></li>
-        <li><a href="Products.html">
-          <i class="fa-solid fa-bag-shopping"></i>Products</a></li>
-        <li><a href="contact.html">
-          <i class="fa-solid fa-phone"></i>Contact</a></li>
-        <li><a href="cart.html">
-          <i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <div class="logo">
+      <img src="assets/Media.jpeg" alt="Logo">
+      <h2>Abhika LIBAS</h2>
+    </div>
+
+    <!-- Normal nav links (desktop view) -->
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fa-regular fa-house"></i>Home</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+      <li><a href="Products.html"><i class="fa-solid fa-bag-shopping"></i>Products</a></li>
+      <li><a href="contact.html"><i class="fa-solid fa-phone"></i>Contact</a></li>
+      <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
+    </ul>
+
+    <!-- Hamburger icon (visible on mobile) -->
+    <div class="hamburger">☰</div>
+  </nav>
+</header>
+
+<!-- Sidebar Menu (for mobile view) -->
+<div class="sidebar">
+  <a href="index.html"><i class="fa-regular fa-house"></i> Home</a>
+  <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+  <a href="Products.html"><i class="fa-solid fa-bag-shopping"></i> Products</a>
+  <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact</a>
+  <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+</div>
+
 
   <section class="contact">
     <h2>Contact Us</h2>
@@ -79,5 +90,17 @@
       <p>&copy; 2025 Fashion Store. All Rights Reserved.</p>
     </div>
   </footer>
+  <script>
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.querySelector('.sidebar');
+
+  hamburger.addEventListener('click', () => {
+    if (sidebar.style.right === "0px") {
+      sidebar.style.right = "-250px"; // hide
+    } else {
+      sidebar.style.right = "0px"; // show
+    }
+  });
+</script>
 </body>
 </html>

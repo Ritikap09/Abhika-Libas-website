@@ -245,6 +245,18 @@ nav a:hover {
   margin-top: 1rem;
   display: inline-block;
 }
+/* cart */
+#cart-count {
+  background-color: #f39c12;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: relative;
+  top: -10px;
+  left: 5px;
+}
 
 /* Testimonials */
 .testimonials {
